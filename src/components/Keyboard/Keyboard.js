@@ -1,12 +1,19 @@
 import buttons from "../../data/buttons";
 import Key from "../Key/Key";
 
-const Keyboard = () => {
+const Keyboard = ({ action }) => {
   return (
-    <div class="keyboard-container">
-      <ol class="keyboard">
+    <div className="keyboard-container">
+      <ol className="keyboard">
         {buttons.map((button) => {
-          return <Key buttonClass={button.class} text={button.text} />;
+          return (
+            <Key
+              key={button.text}
+              buttonClass={button.class}
+              text={button.text}
+              action={action}
+            />
+          );
         })}
       </ol>
     </div>
